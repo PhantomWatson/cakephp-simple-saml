@@ -1,0 +1,27 @@
+{
+    "name": "your-name-here/simple-saml",
+    "description": "SimpleSaml plugin for CakePHP",
+    "type": "cakephp-plugin",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.2",
+        "cakephp/authentication": "^2.0",
+        "cakephp/authorization": "^2.1",
+        "cakephp/cakephp": "~4.2.0",
+        "simplesamlphp/simplesamlphp": "1.19"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SimpleSaml\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SimpleSaml\\Test\\": "tests/",
+            "Cake\\Test\\": "vendor/cakephp/cakephp/tests/"
+        }
+    }
+}
