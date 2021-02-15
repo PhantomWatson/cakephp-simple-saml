@@ -1,5 +1,5 @@
 {
-    "name": "your-name-here/simple-saml",
+    "name": "phantomwatson/cakephp-simple-saml",
     "description": "SimpleSaml plugin for CakePHP",
     "type": "cakephp-plugin",
     "license": "MIT",

@@ -9,7 +9,7 @@ composer remove cakephp/bake
 ```
 Then:
 ```
-composer require group-name-pending/cakephp-simple-saml
+composer require phantomwatson/cakephp-simple-saml
 ```
 
 ## Add an authorization policy
