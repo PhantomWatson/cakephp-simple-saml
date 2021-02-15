@@ -12,14 +12,18 @@ Then:
 composer require group-name-pending/cakephp-simple-saml
 ```
 
+## Add an authorization policy
+- Add [an authorization policy class](https://book.cakephp.org/authorization/2/en/policies.html) under `/src/Policy`.
+  ([example policy](https://github.com/BallStateCBER/datacenter-plugin-cakephp4/blob/master/src/Policy/RequestPolicy.php))
+
 ## Update `Application.php`
 - Have the `Application` class implement `AuthorizationServiceProviderInterface`
-- In `/src/Application.php`, add these lines to `bootstrap()`:
+- Add these lines to `Application::bootstrap()`:
     ```php
     $this->addPlugin('Authentication');
     $this->addPlugin('SimpleSaml');
     ```
-- Add `getAuthorizationService()` and `getAuthenticationService()` methods:
+- Add `getAuthorizationService()` and `getAuthenticationService()` methods, using the name of your policy class:
     ```php
     /**
      * Returns the authorization service
@@ -88,11 +92,7 @@ Uncomment and change the value of `authSource` if needed.
 ## Update User model
 Have `User` entity class
 [implement `IdentityInterface`](https://book.cakephp.org/authentication/2/en/identity-object.html#implementing-the-identityinterface-on-your-user-class)
-and add the `getIdentifier()` and `getOriginalData()` methods to it.
-
-## Add an authorization policy
- - Add [an authorization policy class](https://book.cakephp.org/authorization/2/en/policies.html) under `/src/Policy`.
-   ([example policy](https://github.com/BallStateCBER/datacenter-plugin-cakephp4/blob/master/src/Policy/RequestPolicy.php))
+and add the `getIdentifier()` and `getOriginalData()` methods to it. ([example](https://github.com/BallStateCBER/datacenter-plugin-cakephp4/blob/master/src/Model/Entity/User.php))
 
 ## Get SimpleSAML's /www directory ready for being accessed
 1. Set up a VirtualHost alias (or its equivalent in non-Apache servers) or a symlink for
@@ -119,5 +119,6 @@ and add the `getIdentifier()` and `getOriginalData()` methods to it.
    ```php
    'metadatadir' => CONFIG . 'simplesaml' . DS . 'metadata'',
    ```
+
 # Run checks
 Open the SimpleSAML web-accessible directory in a browser to confirm that it’s installed and configured correctly.
