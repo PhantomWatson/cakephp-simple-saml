@@ -79,6 +79,8 @@ composer require group-name-pending/cakephp-simple-saml
         return $service;
     }
     ```
+  - Set the value of `tokenField` to the name of the database field to identify users with (e.g. `'sso-uuid'`)
+  - Set the value of `dataField` to the name of the field in the data received from the authenticator (e.g. `'id'`)
 
 ## Update `AppController.php`
 In `AppController::initialize()`, load the `SimpleSamlComponent` from the plugin:
