@@ -122,3 +122,11 @@ and add the `getIdentifier()` and `getOriginalData()` methods to it. ([example](
 
 # Run checks
 Open the SimpleSAML web-accessible directory in a browser to confirm that it’s installed and configured correctly.
+
+# Using the component
+All controllers should now have access to the `SimpleSaml` component, which provides these methods:
+- `$this->SimpleSaml->isAuthenticated();` - Returns true if the user is logged in via SimpleSaml
+- `$this->SimpleSaml->login($params);` - Starts the authentication process (`$params` is documented at
+  `\SimpleSAML\Auth\Simple::login()`)
+- `$this->SimpleSaml->logout();` - Logs the user out
+- `$this->SimpleSaml->getUserAttributes();` - Returns the authenticated user's attributes from the SimpleSaml session, or an empty array if no user is authenticated
