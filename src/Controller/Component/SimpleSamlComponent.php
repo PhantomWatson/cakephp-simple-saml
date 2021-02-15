@@ -37,7 +37,7 @@ class SimpleSamlComponent extends Component
     }
 
     /**
-     * Starts the authentication process.
+     * Starts the authentication process
      *
      * @param mixed $params Params to pass to SimpleSamlPHP.
      * @link https://simplesamlphp.org/docs/stable/simplesamlphp-sp-api#section_4
@@ -48,7 +48,7 @@ class SimpleSamlComponent extends Component
     }
 
     /**
-     * Logs the user out.
+     * Logs the user out
      *
      * @param mixed $params Params to pass to SimpleSamlPHP.
      * @link https://simplesamlphp.org/docs/stable/simplesamlphp-sp-api#section_5
@@ -59,7 +59,8 @@ class SimpleSamlComponent extends Component
     }
 
     /**
-     * Retrieve the attributes of the current user. If the user isn't authenticated, an empty array will be returned.
+     * Returns the authenticated user's attributes from the SimpleSaml session,
+     * or an empty array if no user is authenticated
      *
      * @return array
      */

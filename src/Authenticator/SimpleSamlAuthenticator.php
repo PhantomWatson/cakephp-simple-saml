@@ -33,7 +33,7 @@ class SimpleSamlAuthenticator extends AbstractAuthenticator
     }
 
     /**
-     * Begins the authentication process if the user isn't already authenticated
+     * Returns a result if the user is already authenticated and begins the authentication process otherwise
      *
      * @param \Psr\Http\Message\ServerRequestInterface $request
      * @return \Authentication\Authenticator\ResultInterface
