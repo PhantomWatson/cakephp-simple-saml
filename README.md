@@ -85,7 +85,7 @@ composer require phantomwatson/cakephp-simple-saml
 ## Update `AppController.php`
 In `AppController::initialize()`, load the `SimpleSamlComponent` from the plugin:
 ```php
-$this->loadComponent('SimpleSaml.SimpleSamlComponent', [
+$this->loadComponent('SimpleSaml.SimpleSaml', [
     //'authSource' => 'default-sp'
 ]);
 ```
